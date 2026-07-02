@@ -1,9 +1,15 @@
 spring:
   kafka:
-    bootstrap-servers: localhost:9092,localhost:9093
+    bootstrap-servers: 34.14.207.7:9092,34.14.207.7:9093
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: order-processor-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
 server:
   port: 8080
 
