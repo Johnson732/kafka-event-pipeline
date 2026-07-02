@@ -1,3 +1,13 @@
 spring:
-  application:
-    name: kafka-event-pipeline
+  kafka:
+    bootstrap-servers: localhost:9092,localhost:9093
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+server:
+  port: 8080
+
+topic:
+  order: order-events
+  payment: payment-events
+  inventory: inventory-events
